@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+	"name": "Virtual Study Pet",
+	"description": "Human Computer Interaction Project :)",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+		  "matches": ["<all_urls>"],
+		  "js": ["content.js"],
+		  "css": ["content-ext.css"],
+		  "run_at": "document_start",
+		  "all_frames": true
+		}	
+	],
+	"page_action": {
+		"default_icon": {
+			"32": "images/bobcat_32.png",
+			"48": "images/bobcat_48.png",
+			"128": "images/bobcat_128.png"
+		}
+	},
+	"icons": {
+		"32": "images/bobcat_32.png",
+		"48": "images/bobcat_48.png",
+		"128": "images/bobcat_128.png"
+	},
+		
+	"web_accessible_resources": [
+	"images/*"
+	],
+	"permissions": [
+	"*://*/*",
+	"<all_urls>"
+	]
+}
