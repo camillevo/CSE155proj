@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Virtual Study Pet",
-	"description": "Human Computer Interaction Project :)",
+	"description": "CSE155 Human Computer Interaction Project :)",
 	"version": "1.0.0",
 	"content_scripts": [
 		{
@@ -12,7 +12,8 @@
 		  "all_frames": true
 		}	
 	],
-	"page_action": {
+	"browser_action": {
+		"default_popup": "popup.html",
 		"default_icon": {
 			"32": "images/bobcat_32.png",
 			"48": "images/bobcat_48.png",
