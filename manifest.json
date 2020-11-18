@@ -30,6 +30,9 @@
 	],
 	"permissions": [
 	"*://*/*",
-	"<all_urls>"
+	"<all_urls>",
+	"alarms",
+	"storage",
+	"notifications"
 	]
 }
