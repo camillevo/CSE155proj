@@ -25,3 +25,23 @@
   animation: ssh-pet-rest 0.2s steps(3);
 }
 
+.ssh-pet.alert {
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/bobcat_alarm.png');
+  background-repeat: repeat-x;
+  background-size: 202px 177.3px;
+}
+
+.button {
+  background-color: #008CBA;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 7px 14px;
+  position: fixed;
+  z-index: 1000;
+  left: 1000px;
+  top: 420px;
+  cursor: pointer;
+}
+

@@ -9,18 +9,33 @@ function ssh() {
       y: 0,
     };
     const pet = document.createElement('div');
+	const otherPet = document.createElement('div');
+	const button = document.createElement("button");
+	button.innerHTML = "JOIN ZOOM";
     updatePosition(1030, 450);
     pet.classList.add('ssh-pet');
+	pet.classList.add('ssh-pet.alert');
+	button.classList.add('button');
+	
+	button.addEventListener("click", joinZoom);
+
     document.body.appendChild(pet);
+	document.body.appendChild(otherPet);
+	document.body.appendChild(button);
 
     scheduleSomething();
     watchMouse();
 
+	//pet.classList.add('alert');
 
     function animateRest() {
 	  console.log("printed");
       return animateClass('rest');
     }
+
+	function joinZoom() {
+		window.open("https://ucmerced.zoom.us/j/94586704466?pwd=V05vb3lDZGthaHVvQTVLS3dPd0I2QT09", '_blank');
+	}
 
     function watchMouse() {
       pet.addEventListener('mousemove', async event => {
