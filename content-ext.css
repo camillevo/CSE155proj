@@ -39,9 +39,21 @@
   font-size: 16px;
   padding: 7px 14px;
   position: fixed;
-  z-index: 1000;
+  z-index: 980;
   left: 1000px;
-  top: 420px;
+  top: 435px;
   cursor: pointer;
+}
+
+.text {
+  position: fixed;
+  color: #008CBA;
+  font-weight: bold;
+
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  font-size: 18px;
+  z-index: 980;
+  left: 980px;
+  top: 390px;
 }
 

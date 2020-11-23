@@ -4,29 +4,54 @@ function ssh() {
       height: 300,
       width: 300,
     };
+	const classTime = {
+		hour: 15,
+		minute: 5
+	}
     const position = {
       x: 0,
       y: 0,
     };
     const pet = document.createElement('div');
-	const otherPet = document.createElement('div');
-	const button = document.createElement("button");
-	button.innerHTML = "JOIN ZOOM";
+	setInterval(function () {
+		var date = new Date();
+		if (date.getHours() == classTime.hour && date.getMinutes() >= classTime.minute - 5 && date.getMinutes() <= classTime.minute + 5) {
+			displayZoom(classTime.minute - date.getMinutes());
+		} 
+	}, 1000)
+	
     updatePosition(1030, 450);
     pet.classList.add('ssh-pet');
-	pet.classList.add('ssh-pet.alert');
-	button.classList.add('button');
-	
-	button.addEventListener("click", joinZoom);
+
 
     document.body.appendChild(pet);
-	document.body.appendChild(otherPet);
-	document.body.appendChild(button);
 
     scheduleSomething();
     watchMouse();
+	
+	function displayZoom(minutesLeft) {
+		if(!document.getElementById("zoomButton")) {
+			const button = document.createElement("button");
+			button.innerHTML = "JOIN ZOOM";
+			button.setAttribute("id", "zoomButton");
 
-	//pet.classList.add('alert');
+			button.classList.add('button');
+		
+			button.addEventListener("click", joinZoom);
+			document.body.appendChild(button);	
+			
+			const text = document.createElement("h2");
+			//text.innerHTML = "CSE155 Lecture starting in 5 minutes!";
+			text.classList.add('text');
+			text.setAttribute("id", "zoomText");
+			document.body.appendChild(text);
+		}
+		if(minutesLeft > 0) {
+			document.getElementById("zoomText").innerHTML = "CSE155 starting in " + minutesLeft + " minutes!";
+		} else {
+			document.getElementById("zoomText").innerHTML = "CSE155 has started!";
+		}
+	}
 
     function animateRest() {
 	  console.log("printed");
@@ -59,7 +84,6 @@ function ssh() {
       setTimeout(async () => {
         const choices = 10;
         const random = ~~(Math.random() * choices);
-        await doSomething(random);
         scheduleSomething();
       }, 800 + Math.random() * 1000);
     }

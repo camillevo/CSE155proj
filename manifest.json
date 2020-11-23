@@ -6,7 +6,8 @@
 	"content_scripts": [
 		{
 		  "matches": ["<all_urls>"],
-		  "js": ["content.js"],
+		  "js": ["content.js"],    
+		  "scripts": ["alarm.js"],
 		  "css": ["content-ext.css"],
 		  "run_at": "document_start",
 		  "all_frames": true
@@ -34,6 +35,7 @@
 	"<all_urls>",
 	"alarms",
 	"storage",
-	"notifications"
+	"notifications",
+	"alarms"
 	]
 }
