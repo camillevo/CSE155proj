@@ -70,3 +70,35 @@ h1 {
   margin: 0;
   padding: 10px;
 }
+.ssh-pet.alert {
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/bobcat_alarm.png');
+  background-repeat: repeat-x;
+  background-size: 202px 177.3px;
+}
+
+.button {
+  background-color: #008CBA;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 7px 14px;
+  position: fixed;
+  z-index: 980;
+  left: 1000px;
+  top: 435px;
+  cursor: pointer;
+}
+
+.text {
+  position: fixed;
+  color: #008CBA;
+  font-weight: bold;
+
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  font-size: 18px;
+  z-index: 980;
+  left: 980px;
+  top: 390px;
+}
+

@@ -4,23 +4,63 @@ function ssh() {
       height: 300,
       width: 300,
     };
+	const classTime = {
+		hour: 17,
+		minute: 45
+	}
     const position = {
       x: 0,
       y: 0,
     };
     const pet = document.createElement('div');
+	setInterval(function () {
+		var date = new Date();
+		if (date.getHours() == classTime.hour && date.getMinutes() >= classTime.minute - 5 && date.getMinutes() <= classTime.minute + 5) {
+			displayZoom(classTime.minute - date.getMinutes());
+		} 
+	}, 1000)
+	
     updatePosition(1030, 450);
     pet.classList.add('ssh-pet');
+
+
     document.body.appendChild(pet);
 
     scheduleSomething();
     watchMouse();
+	
+	function displayZoom(minutesLeft) {
+		if(!document.getElementById("zoomButton")) {
+			const button = document.createElement("button");
+			button.innerHTML = "JOIN ZOOM";
+			button.setAttribute("id", "zoomButton");
 
+			button.classList.add('button');
+		
+			button.addEventListener("click", joinZoom);
+			document.body.appendChild(button);	
+			
+			const text = document.createElement("h2");
+			//text.innerHTML = "CSE155 Lecture starting in 5 minutes!";
+			text.classList.add('text');
+			text.setAttribute("id", "zoomText");
+			document.body.appendChild(text);
+		}
+		if(minutesLeft > 0) {
+			document.getElementById("zoomText").innerHTML = "CSE155 starting in " + minutesLeft + " minutes!";
+		} else {
+			document.getElementById("zoomText").innerHTML = "CSE155 has started!";
+		}
+	}
 
     function animateRest() {
 	  console.log("printed");
       return animateClass('rest');
     }
+
+	function joinZoom() {
+		window.open("https://ucmerced.zoom.us/j/94586704466?pwd=V05vb3lDZGthaHVvQTVLS3dPd0I2QT09", '_blank');
+	}
 
     function watchMouse() {
       pet.addEventListener('mousemove', async event => {
@@ -44,7 +84,6 @@ function ssh() {
       setTimeout(async () => {
         const choices = 10;
         const random = ~~(Math.random() * choices);
-        await doSomething(random);
         scheduleSomething();
       }, 800 + Math.random() * 1000);
     }
