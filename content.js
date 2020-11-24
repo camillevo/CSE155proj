@@ -5,8 +5,8 @@ function ssh() {
       width: 300,
     };
 	const classTime = {
-		hour: 15,
-		minute: 5
+		hour: 17,
+		minute: 45
 	}
     const position = {
       x: 0,
