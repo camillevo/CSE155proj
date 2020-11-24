@@ -1,20 +1,59 @@
 <!DOCTYPE html>
-  <html>
+  <html lang="en">
     <head>
-      <style>
-        button {
-          height: 30px;
-          width: 30px;
-          outline: none;
-        }
-      </style>
-	  <script src="popup.js"></script>
-
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script src="popup.js" defer></script>
+      <link href="content-ext.css" rel="stylesheet">
+      <title>Tabs</title>
     </head>
-    <body>
-		<h2>Enter</h2>
-	  <input type="time" id="appt" name="appt">
-	  <a href="" id="alarmOn">ON</a>
+    <style type = "text/css" >
+        body {
+        min-width: 350px; 
+        max-width: 100%;
+        position: relative;
+        vertical-align:middle;
+        }
+    </style>
+    <body style="background-color: goldenrod">
+
+      <img src="/images/bobcat_left.png" style="width:25%"> 
+      <span style="color: white; background-color: #003399; font-size: 35px;" >Virtual Study Pet</span>
+
+      <ul class="tabs">
+       <li data-tab-target="#inProgress" class="active tab">In Progress</li>
+       <li data-tab-target="#idealGoal" class="tab">Ideal Goal</li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="inProgress" data-tab-content class="active">
+        <h1>Reminders</h1>
+        <form>
+          <label for="reminder">Reminder Description</label><br>
+          <input type="text" id="reminder" name="reminder" value="Zoom lecture starting soon"><br>
+          <label for="link">Link</label><br>
+          <input type="text" id="link" name="link" value="https://ucmerced.zoom.us/j/94791981910?pwd=ZVU0TDArdzJFVVI1NFBSUytEL2xLQT09#success"><br>
+        
+          <form action="/action_page.php">
+            <label for="date">Date</label><br>
+            <input type="date" id="date" name="date">
+            <input type="submit" value="Submit">
+          </form>
+
+          <form action="/action_page.php">
+            <label for="appt">Time</label><br>
+              <input type="time" id="appt" name="appt">
+            <input type="submit" value="Submit">
+         </form>
+
+        </form><br>
+        <button>Add another reminder</button>
+      </div>
+
+      <div id="idealGoal" data-tab-content>
+        <img src="/images/CSE155_Calender.jpg" style="width: 100%">
+      </div>
 
     </body>
   </html>
